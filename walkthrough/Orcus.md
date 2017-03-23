@@ -216,7 +216,7 @@ No printers returned.
 enum4linux complete on Thu Mar 23 15:58:39 2017
 ```
 I removed all of the unknowns to keep the output a bit more *handy*. 
-So, what else. There is a webserver running on port 80 and 443, lets browse to them and see what's there. Ah, port 80 has a nice [welcome](../images/orcus/orcus/welcome.png) page, however port 443 has a problem. Is it plain text on port 443 then.
+So, what else. There is a webserver running on port 80 and 443, lets browse to them and see what's there. Ah, port 80 has a nice [welcome](../images/orcus/welcome.png) page, however port 443 has a problem. Is it plain text on port 443 then.
 ```bash
 SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1
 Protocol mismatch.
