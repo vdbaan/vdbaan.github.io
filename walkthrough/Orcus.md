@@ -611,7 +611,11 @@ WOW, not only can we mount the tmp directory and can we save files there, we hav
 
 So, the *only* thing we now need is it get a local shell, this NFS will help us elevate it.
 
-Ok, back to the web, let's see what we have. The basic is a welcome screen ![welcome](../images/orcus/welcome.png), phpmyadmin asks for the login, zenphoto goes to it's setup screen ![zenphoto setup](../images/orcus/setup.png)] and /index.php is an ecommerce site which claims that the database is offline ![offline](../images/orcus/offline.png).
+Ok, back to the web, let's see what we have. The basic is a welcome screen ![welcome](../images/orcus/welcome.png),
+
+phpmyadmin asks for the login, zenphoto goes to it's setup screen ![zenphoto setup](../images/orcus/setup.png)
+
+and /index.php is an ecommerce site which claims that the database is offline ![offline](../images/orcus/offline.png).
 
 PHPMyAdmin is version 4.5.4.1 which uses tokens for login, which makes bruteforcing harder. Let's see if we can find the credentials somewhere else first. We downloaded a backup directory, perhaps that has something of interest. There was a file there in this directory that we couldn't download *ssh-creds.bak*, we'll look at that when we have access.
 ```bash
