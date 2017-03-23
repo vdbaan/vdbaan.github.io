@@ -216,7 +216,7 @@ No printers returned.
 enum4linux complete on Thu Mar 23 15:58:39 2017
 ```
 I removed all of the unknowns to keep the output a bit more *handy*. 
-So, what else. There is a webserver running on port 80 and 443, lets browse to them and see what's there. Ah, port 80 has a nice [welcome](../images/orcus/welcome.png) page, however port 443 has a problem. Is it plain text on port 443 then.
+So, what else. There is a webserver running on port 80 and 443, lets browse to them and see what's there. Ah, port 80 has a nice [welcome](../images/orcus/orcus/welcome.png) page, however port 443 has a problem. Is it plain text on port 443 then.
 ```bash
 SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.1
 Protocol mismatch.
@@ -611,7 +611,7 @@ WOW, not only can we mount the tmp directory and can we save files there, we hav
 
 So, the *only* thing we now need is it get a local shell, this NFS will help us elevate it.
 
-Ok, back to the web, let's see what we have. The basic is a welcome screen ![welcome](../images/welcome.png), phpmyadmin asks for the login, zenphoto goes to it's setup screen ![zenphoto setup)(../images/setup.png)] and /index.php is an ecommerce site which claims that the database is offline ![offline](../images/offline.png).
+Ok, back to the web, let's see what we have. The basic is a welcome screen ![welcome](../images/orcus/welcome.png), phpmyadmin asks for the login, zenphoto goes to it's setup screen ![zenphoto setup](../images/orcus/setup.png)] and /index.php is an ecommerce site which claims that the database is offline ![offline](../images/orcus/offline.png).
 
 PHPMyAdmin is version 4.5.4.1 which uses tokens for login, which makes bruteforcing harder. Let's see if we can find the credentials somewhere else first. We downloaded a backup directory, perhaps that has something of interest. There was a file there in this directory that we couldn't download *ssh-creds.bak*, we'll look at that when we have access.
 ```bash
@@ -645,7 +645,7 @@ YAY!! Let's search online for an exploit of PHPMyAdmin 4.5.4.1. Not really, we s
 
 So, we need to add a user, let's add admin and admin1234 as password. Good, we can login to ZenPhoto with these credentials and see what you can do with it. Trying to upload a reverse shell as image trick doesn't work, let's see what else we can do. After a while I discovered the 'elFinder' which *Provides file handling for the upload/files tab and the TinyMCE file browser.*. Lets apply this to see what it does, but first create an album called *new album* (I know, very original). 
 
-WOOT, there is no checker like this and I could upload php-reverse-shell.php to the system. Opening it gave the following screen which tells me that it works ![reverse shell](../images/reverse.png)
+WOOT, there is no checker like this and I could upload php-reverse-shell.php to the system. Opening it gave the following screen which tells me that it works ![reverse shell](../images/orcus/reverse.png)
 So now it's time to startup a listener and fire it again.
 ```bash
 $ nc -vnlp 1234
